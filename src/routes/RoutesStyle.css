@@ -1,0 +1,52 @@
+.grediant {
+  background: linear-gradient(180deg, #0062ff, #da61ff);
+ z-index: 110;;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+ 
+
+
+
+
+/*
+
+ body {
+  margin:0;
+}
+.grediant {
+  text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(45deg,#0b3c8b, #8f37aa, #208fb8 , #1ba585, #ca3a16);
+    background-size: 600% 100%;
+    animation: gradient 30s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
+
+*/
+
+
+
+.white-color {
+  color: white;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+
+.map-input{
+  background: white !important;
+  opacity: 0.9;
+}

@@ -9,7 +9,7 @@ import UserInfo from "../contexts/UserInfoContext";
 import axios from "axios";
 import { Button, TextField } from "@mui/material";
 import StyledSnackbar from '../components/Snackbar'
-import styled from "@emotion/styled";
+
 
 export default function UserEnterCode() {
 
@@ -94,7 +94,7 @@ export default function UserEnterCode() {
 
   const Completionist = () => (
     <Button variant="text" style={{
-      color: "white",
+     
       fontSize: "13px"
     }} onClick={resendCode}>
       ارسال مجدد کد تایید
@@ -113,25 +113,7 @@ export default function UserEnterCode() {
   };
 
 
-  
-
-  const StyledTextField = styled(TextField)({
  
-    input: {
-      color: 'white',
-    },
-
-    "& label.Mui-focused": {
-      color: "white",
-    },
-    "& label": {
-      color: "white",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "white",
-    },
-  });
-
 
 
   return (
@@ -145,10 +127,10 @@ export default function UserEnterCode() {
         sx={{ minHeight: "100vh" }}
       >
           
-          <p style={{ textAlign: "center" }} className="white-color">
+          <p style={{ textAlign: "center" }} >
            کد پنج رقمی پیامک شده را وارد کنید
           </p>
-        <StyledTextField
+        <TextField
           sx={{ width: "100px"}}
           variant="filled"
           inputProps={{
@@ -164,13 +146,13 @@ export default function UserEnterCode() {
           onChange={handleState}
         />
 
-        <div style={{color: "white",fontSize: "14px",marginTop: "30px",}}>
+        <div style={{fontSize: "14px",marginTop: "30px",}}>
           <Countdown key={restart} date={Date.now() + 119000} renderer={renderer} />
         </div>
 
         <Button variant="text"
           style={{
-            color: "white",
+          
             fontSize: "13px",
           }}
           onClick={() => navigate(-1)}

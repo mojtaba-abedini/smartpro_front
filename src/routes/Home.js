@@ -5,7 +5,7 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 // import UserInfo from "../contexts/UserInfoContext";
-
+import ResponsiveAppBar from "../components/AppBar";
 import StyledTextField from "../components/TextField";
 import { useSpring, animated } from "@react-spring/web";
 import axios from "axios";
@@ -155,7 +155,10 @@ export default function Home() {
   }
 
   return (
-    <Container maxWidth="md">
+
+    <>
+    <ResponsiveAppBar/>
+     <Container maxWidth="md">
       <Stack
         spacing={3}
         style={{ height: "100%" }}
@@ -163,7 +166,8 @@ export default function Home() {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        sx={{ mt: 12, mb: 13 }}
+       
+        sx={{ mb: 13, mt:11 }}
       >
         {isLoading ? (
           <CircularProgress
@@ -269,5 +273,9 @@ export default function Home() {
         </Modal>
       </Stack>
     </Container>
+    </>
+
+
+   
   );
 }

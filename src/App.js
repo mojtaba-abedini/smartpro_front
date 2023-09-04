@@ -15,7 +15,7 @@ import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { useState } from "react";
 import { IconButton, Typography } from "@mui/material";
-
+import Fab from '@mui/material/Fab';
 function App() {
   const cacheRtl = createCache({
     key: 'muirtl',
@@ -66,6 +66,13 @@ function App() {
       icons:{
         light: '#0d0f1a',
         dark: '#d0d7e2',
+      },
+
+      appbarcolor:{
+      
+        light: '#d0d7e2',
+        main:'#d0d7e2',
+        dark: '#191b26',
       },
 
       // Provide every color token (light, main, dark, and contrastText) when using
@@ -123,12 +130,14 @@ function App() {
           <BrowserRouter>
 
 
-
-
-
-            <Typography> <IconButton sx={{ ml: 1 }} onClick={handleChange} color="inherit">
+          <Fab sx={{position:'fixed',bottom:'20px',left:'20px'}} color="primary" aria-label="add" >
+          <IconButton  onClick={handleChange} color="inherit">
               {darkTheme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton></Typography>
+            </IconButton>
+          </Fab>
+
+
+            
 
 
             <Routes>

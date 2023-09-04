@@ -95,7 +95,7 @@ export default function UserEnterPhone() {
       >
         <Box sx={{ width: "300px" }}>
           {/* <img src={Logo} alt="Tezbar Logo" width={160} height={100} /> */}
-          <p style={{ textAlign: "center" }} className="white-color">
+          <p style={{ textAlign: "center" }}>
             تلفن همراه خود را وارد کنید
           </p>
           <StyledTextField

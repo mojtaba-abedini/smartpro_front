@@ -18,6 +18,11 @@ import Grid from "@mui/material/Grid";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 import {ReactComponent as LampIcon} from '../assets/lamp-svgrepo-com.svg';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ViewListIcon from '@mui/icons-material/ViewList';
 
 
 const Fade = forwardRef(function Fade(props, ref) {
@@ -154,6 +159,9 @@ export default function Home() {
 
   }
 
+  const [value, setValue] = useState(1);
+
+
   return (
 
     <>
@@ -273,6 +281,27 @@ export default function Home() {
         </Modal>
       </Stack>
     </Container>
+
+
+
+    <BottomNavigation   style={{zIndex:1}} sx={{width:'100%',position: 'fixed', bottom: 0,p:5, bgcolor: theme => `theme.palette.appbarcolor.${theme}`,
+            '& .Mui-selected': {
+              '& .MuiBottomNavigationAction-label': {
+                fontSize: 14,
+                transition: 'none',
+                lineHeight: '20px'
+              },
+             
+            }}}  showLabels value={value}  onChange={(event, newValue) => { setValue(newValue); }}
+            >
+              <BottomNavigationAction onClick={()=>navigate("/user/orders")}  label="سفارش ها" icon={<ViewListIcon />} />
+      
+              <BottomNavigationAction onClick={()=>navigate("/user/new-order")}  label="سفارش جدید" icon={<AddCircleIcon />} />
+              <BottomNavigationAction onClick={()=>navigate("/user/profile")} label="پروفایل" icon={<AccountCircleIcon />} />
+              
+      </BottomNavigation>
+
+
     </>
 
 
